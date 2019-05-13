@@ -30,6 +30,13 @@ class Application
   #     @@cart << search_term
   #     resp.write "Added #{search_term}"
   #   end
+
+  elsif req.path.match(/add/)
+    item_to_add = req.params["item"]
+    if @@items.include? item_to_add
+      @@cart << item_to_add
+      resp.write "added #{item_to_add}"
+    else
   else
       resp.write "Path Not Found"
     end
