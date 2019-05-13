@@ -30,8 +30,6 @@ class Application
       @@cart << search_term
       resp.write "Added #{search_term}"
     end
-
-    end
   else
       resp.write "Path Not Found"
     end
